@@ -26,6 +26,7 @@ class AddPostList extends Component {
     render() {
         return (
             <>
+            <img src="https://i.imgur.com/bcYXOOF.png" height="300px"alt=""/>
             <h1>Add To-Do</h1>
             <div className="card" id="addPost">
             <form className="col s12" ref={this.formRef} onSubmit={this.handleSubmit}>
