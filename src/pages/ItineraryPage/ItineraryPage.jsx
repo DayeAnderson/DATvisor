@@ -36,7 +36,8 @@ const ItineraryPage = (props) => {
         </Link>
         </div>
 
-        
+        <div className="card">
+            <div className="card-body"></div>
         <h1>Post-Arrival Itinerary</h1>
         <div className='container'>
         <div>
@@ -48,6 +49,8 @@ const ItineraryPage = (props) => {
                 user={props.user}
                 />
                 )}
+
+                
         </div>
         <Link
         to={{
@@ -59,6 +62,7 @@ const ItineraryPage = (props) => {
         <button type="button" className="iButt">Add Task</button>
         </Link>
         </div>  
+        </div>
         </>
     )
 }

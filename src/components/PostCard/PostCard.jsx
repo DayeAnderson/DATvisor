@@ -10,7 +10,7 @@ function PostCard({ user, postArrival, handleDeletePostArrival}) {
         
         <div>
             <div>
-                <h3>{postArrival.toDo}</h3>         
+                <li>{postArrival.toDo}</li>         
             </div>
         </div>
        

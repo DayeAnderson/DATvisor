@@ -39,7 +39,7 @@ function PreCard({ user, preArrival, handleDeletePreArrival}) {
             <>
                 <div>
                     <div>
-                        <h3>{preArrival.toDo}</h3>
+                        <li>{preArrival.toDo}</li>
                     </div>
                 </div>
                     <Link 
