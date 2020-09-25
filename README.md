@@ -79,6 +79,7 @@
 - Chat Feature
 - Share past trips with others as a suggestion
 - Find out what the weather will be for the duration of your trip
+- Add links to hotels and airlines 
 
 ## Huge Thank Yous: 
 to:
