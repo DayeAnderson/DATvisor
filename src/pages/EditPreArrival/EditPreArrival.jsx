@@ -27,18 +27,18 @@ handleChange = e => {
 render() {
     return (
         <>
-            <h1>Tasks to complete prior to Trip</h1>
+            <h1>Edit Pre Arrival Task</h1>
             <div className="EditPreArrival">
                 <form className="col s12" ref={this.formRef} onSubmit={this.handleSubmit}>
                     <div className="row">
                         <div className="input-field col s12">
-                        <label className="active" htmlFor="toDo">Task(s)</label>
+                        <label className="active" htmlFor="toDo">Task:</label>
                         <input name="toDo" id="toDo" type="text" className="active" value={this.state.formData.toDo} onChange={this.handleChange} required />
                         </div>
                     </div>
                     <button
                         type="submit"
-                        className="btn btn-success"
+                        className="updateTask"
                         disabled={this.state.invalidForm}
                     >
                         Update Tasks

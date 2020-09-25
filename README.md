@@ -27,18 +27,15 @@
 
 ## *_USER VIEW (NOT LOGGED IN):_*
 ### What the website looks like once you load onto the page:
+![Load](https://i.imgur.com/fjSshY0.png)
 
 ## *_USER VIEW (NOT LOGGED IN):_*
 ### What the website looks like once you Click Sign Up:
+![SignUp](https://i.imgur.com/mzbKOP8.png)
 
 ## *_USER VIEW (LOGGED IN):_*
 ### What the website looks like when looking for ideas:
-
-
-### What the website looks like when you are adding a trip:
-
-
-### What the website looks like when you are making your itinerary:
+![Ideas](https://i.imgur.com/2LCrMbX.png)
 
 ## Technology Implemented:
 - JavaScript
