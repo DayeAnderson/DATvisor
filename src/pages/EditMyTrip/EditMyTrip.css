@@ -1,0 +1,30 @@
+.AddTrip {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    font-family: 'Delius', cursive;
+  }
+  
+  .card {
+    border-radius: 30px;
+    background-color: rgb(236, 215, 143);
+  }
+  
+  .CreateTrip {
+    background-color: #a97d5d;
+    border-radius: 10px;
+    padding: 4px 20px ;
+    color: white;
+    border: 0;
+  }
+
+  .booty {
+    border-radius: 10px;
+    border: none;
+    background-color: #a97d5d;
+    color: white;
+        
+  }
+  

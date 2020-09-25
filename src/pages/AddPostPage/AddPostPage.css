@@ -3,8 +3,8 @@ body {
 }
 
 .postButt{
-    
-        border-radius: 12px;
-        background-color: #a97d5d;
-    
+    color: white;
+    border-radius: 10px;
+    background-color: #a97d5d;
+    border: none;
 }

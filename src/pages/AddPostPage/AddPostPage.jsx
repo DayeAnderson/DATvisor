@@ -37,7 +37,7 @@ class AddPostList extends Component {
                     </div>
                 </div>
                 <br/>
-                <button className="postButt" type="submit">Submit</button>
+                <button className="postButt" type="submit">Add To Itinerary</button>
             </form>
             
             </div>

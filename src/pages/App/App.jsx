@@ -71,17 +71,6 @@ class App extends Component {
         () => this.props.history.push('/my-trips')
         );
       }
-
-  handleAddItinerary = async newItineraryData => {
-    const newPreItinerary = await PreArrivalAPI.create(newItineraryData);
-    const newPostItinerary = await PostArrivalAPI.create(newItineraryData);
-    newPreItinerary.addedBy = {name: this.state.user.name, _id: this.state.user._id}
-    newPostItinerary.addedBy = {name: this.state.user.name, _id: this.state.user._id}
-    this.setState(state => ({
-      preArrivals: [...state.preArrivals, newPreItinerary],
-      postArrivals: [...state.postArrivals, newPostItinerary]
-    }), () => this.props.history.push('/itinerary')) 
-  }
   
   handleUpdatePreArrival = async updatedPreData => {
     const updatedPreArrival = await PreArrivalAPI.update(updatedPreData);

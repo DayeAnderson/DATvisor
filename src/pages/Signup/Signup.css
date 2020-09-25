@@ -14,4 +14,10 @@
 body {
   font-family: 'Delius', cursive;
 }
+#buttbutt {
+  border-radius: 10px;
+  border: none;
+  background-color: #5c755e;
+  color: white;
+}
 

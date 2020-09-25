@@ -39,7 +39,7 @@ class SignupForm extends Component {
     const { name, email, password, passwordConf } = this.state;
     return (
       <>
-      <h1>Welcome to DATvisor</h1>
+      <img src="https://i.imgur.com/bcYXOOF.png" height="300px"alt=""/>
       <div class="card">
       <div id="sign" class="card-body">
         <h3>Sign Up</h3>
@@ -88,7 +88,7 @@ class SignupForm extends Component {
             onChange={this.handleChange}
             />
             <br></br>
-          <button disabled={this.isFormInvalid()}>Sign Up</button>
+          <button id="buttbutt" disabled={this.isFormInvalid()}>Sign Up</button>
           &nbsp;&nbsp;
           <br></br>
           <Link to="/">Cancel</Link>

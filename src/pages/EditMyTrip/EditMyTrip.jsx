@@ -27,7 +27,11 @@ handleChange = e => {
 render() {
     return (
         <>
+            <img src="https://i.imgur.com/bcYXOOF.png" height="300px"alt=""/>
             <h1>Update Trip</h1>
+            <div className="card">
+                <div className="card-body">
+
             <div className="EditPreArrival">
                 <form className="col s12" ref={this.formRef} onSubmit={this.handleSubmit}>
                 <div className="row">
@@ -40,23 +44,27 @@ render() {
                             <input name="departs" id="departs" type="date" className="active" value={this.state.formData.departs} onChange={this.handleChange} />
                             </div>
                         </div>
+                        <br></br>
                     <button
                         type="submit"
-                        className="btn btn-success"
+                        className="booty"
                         disabled={this.state.invalidForm}
-                    >
+                        >
                         Update Trip
                     </button>
+                    <br />
                     <Link 
-                        className="btn btn-danger"
+                        className=""
                         to={{
                             pathname: '/my-trips'
                         }}
-                    >
+                        >
                     Cancel
                     </Link>                            
                 </form>
             </div>
+                        </div>
+                    </div>
         </>
     )
 }

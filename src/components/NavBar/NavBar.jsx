@@ -8,9 +8,7 @@ const NavBar = ({ user, handleLogout }) => {
         <nav className="navbar-nav">
           <div>
             <span className="navbar-brand">
-             <div className='image-container'>
-               <img id="datVisor" src="https://i.imgur.com/bcYXOOF.png"/>
-             </div>
+             <div className='image-container'>             </div>
              <div className="d-flex justify-content-around">  Welcome, {user.name} </div> 
              <div><a href="/my-trips">Your Trips</a></div>
               <div><a href="/add-trip">Add A Trip</a></div>
