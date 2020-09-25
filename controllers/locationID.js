@@ -48,6 +48,7 @@ const getAttractionsForLocationName = async (req, res) => {
     const { body: {baseUrl, baseUrl2, params} } = req
     const locationID = await getLocationID({baseUrl, params})
     const attractions = await getAttractionsFromLocationID({baseUrl2, params, locationID})
+    console.log(attractions)
     res.json({attractions})
     return
 }
