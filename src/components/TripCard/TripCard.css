@@ -1,6 +1,8 @@
 .tripButt {
-    border-radius: 12px;
+    border-radius: 10px;
     background-color: #a97d5d;
+    color:white;
+    border: none;
 }
 
 li {

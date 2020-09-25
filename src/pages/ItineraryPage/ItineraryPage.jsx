@@ -8,14 +8,12 @@ const ItineraryPage = (props) => {
     return(
         <> 
         <img src="https://i.imgur.com/bcYXOOF.png" height="300px"alt=""/>
-        <div className="card">
+        <div className="card" id="left">
             <div className="card-body">
 
         <h1>Pre-Arrival Itinerary</h1>
         <div className='container'>
-        <div>
-            </div>
-            </div>
+
             {props.preArrivals.map((preArrival, myTrip) =>
                 <PreCard
                 key={myTrip._id}
@@ -35,11 +33,9 @@ const ItineraryPage = (props) => {
         <button type="button" className="iButt">Add Task</button>
         </Link>
         </div>
-
-        <div className="card">
-            <div className="card-body"></div>
-        
-        <div className='card'>
+        </div>
+        <div className="card" id="right">
+            <div className="card-body">
         <h1>Post-Arrival Itinerary</h1>
         <div>
             {props.postArrivals.map(postArrival =>
@@ -49,9 +45,7 @@ const ItineraryPage = (props) => {
                 handleDeletePostArrival={props.handleDeletePostArrival}
                 user={props.user}
                 />
-                )}
-
-                
+                )} 
         </div>
         <Link
         to={{
