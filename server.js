@@ -9,7 +9,6 @@ require('./config/database');
 
 const userRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
-const indexRouter = require('./routes/indexPage');
 const preArrivalRouter = require('./routes/preArrival');
 const postArrivalRouter = require('./routes/postArrival');
 const locationIDRouter = require('./routes/locationID');
@@ -27,7 +26,6 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 app.use('/api/auth', authRouter);
 app.use('/api/users', userRouter);
-app.use('/index', indexRouter);
 app.use('/api/preArrival', preArrivalRouter);
 app.use('/api/postArrival', postArrivalRouter);
 app.use('/api/locationID', locationIDRouter);
