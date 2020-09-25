@@ -37,8 +37,8 @@ const ItineraryPage = (props) => {
         </div>
 
         
+        <div className='card'>
         <h1>Post-Arrival Itinerary</h1>
-        <div className='container'>
         <div>
             {props.postArrivals.map(postArrival =>
                 <PostCard
