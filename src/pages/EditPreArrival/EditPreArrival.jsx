@@ -12,7 +12,7 @@ formRef = React.createRef();
 
 handleSubmit = e => {
     e.preventDefault();
-    this.props.handleUpdatePreArrival(this.state.formData);
+    this.props.handleUpdatePreArrival(this.state.formData, this.props.location.state.myTripId);
   };
 
 handleChange = e => {

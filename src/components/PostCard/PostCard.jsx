@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './PostCard.css'
 
-function PostCard({ user, postArrival, handleDeletePostArrival}) {
+function PostCard({ user, postArrival, handleDeletePostArrival, myTripId}) {
     return (
         <>
         {user._id ?   
@@ -18,12 +18,12 @@ function PostCard({ user, postArrival, handleDeletePostArrival}) {
         className="btn yellow black-text"
         to={{
             pathname: '/editPost',
-            state: {postArrival}
+            state: {postArrival, myTripId}
         }}>
         <button type="submit" className="iButt">Edit</button>
         </Link>
         
-        <button type="submit" className="iButt" onClick={() => handleDeletePostArrival(postArrival._id)}>
+        <button type="submit" className="iButt" onClick={() => handleDeletePostArrival(postArrival._id, myTripId)}>
             Delete 
         </button>
         </>

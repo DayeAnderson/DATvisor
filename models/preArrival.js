@@ -7,7 +7,7 @@ const preSchema = new Schema ({
     time: Date,
     done: Boolean,
     addedBy: {type: Schema.Types.ObjectId, ref: 'User'},
-    myTrip: {type: Schema.Types.ObjectId, ref: 'MyTrip'}
+    myTrip: String
 }, {timestamps: true})
 
 module.exports = mongoose.model('PreArrival', preSchema)

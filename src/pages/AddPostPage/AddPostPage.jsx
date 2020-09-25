@@ -11,7 +11,7 @@ class AddPostList extends Component {
 
     handleSubmit = e =>{
         e.preventDefault();
-        this.props.handleAddPost(this.state.formData)
+        this.props.handleAddPost(this.state.formData, this.props.location.state.myTripId)
     }
 
     handleChange = e => {
