@@ -16,9 +16,9 @@ const ItineraryPage = (props) => {
         <h1>Pre-Arrival Itinerary</h1>
         <div className='container'>
 
-            {props.preArrivals.map((preArrival, myTrip) =>
+            {props.preArrivals.map((preArrival) =>
                 <PreCard
-                key={myTrip._id}
+                key={preArrival._id}
                 preArrival={preArrival}
                 handleDeletePreArrival={props.handleDeletePreArrival}
                 user={props.user}
@@ -66,3 +66,4 @@ const ItineraryPage = (props) => {
 }
  
 export default ItineraryPage;
+

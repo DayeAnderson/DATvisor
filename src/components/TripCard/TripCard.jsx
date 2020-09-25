@@ -11,7 +11,7 @@ function TripCard({ user, myTrip, handleDeleteMyTrip}) {
                  <div className="card">
                     <div className="card-body">
                         <h3>{myTrip.nameOfTrip}</h3>
-                <Link 
+                <Link
                 to={{
                     pathname: '/itinerary',
                     state: {myTrip}
