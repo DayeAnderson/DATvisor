@@ -1,8 +1,8 @@
 import tokenService from '../services/tokenService';
 const BASE_URL = '/api/preArrival/';
 
-export function create(preArrival) {
-    return fetch(BASE_URL, {
+export function create(preArrival, myTripId) {
+    return fetch(`${BASE_URL}${myTripId}`, {
         method: "POST",
         headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken() },
         body: JSON.stringify(preArrival)

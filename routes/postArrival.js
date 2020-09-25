@@ -9,7 +9,7 @@ const postArrivalCtrl = require('../controllers/postArrival')
 //protected routes
 router.use(require('../config/auth'));
 router.get('/', checkAuth, postArrivalCtrl.index)
-router.post('/', checkAuth, postArrivalCtrl.create)
+router.post('/:id', checkAuth, postArrivalCtrl.create)
 router.put('/:id', checkAuth, postArrivalCtrl.update)
 router.delete('/:id', checkAuth, postArrivalCtrl.delete)
 

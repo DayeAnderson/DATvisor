@@ -12,7 +12,7 @@ class EditPost extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.handleUpdateToDo(this.state.formData)
+        this.props.handleUpdateToDo(this.state.formData, this.props.location.state.myTripId)
     }
     
     handleChange = e => {

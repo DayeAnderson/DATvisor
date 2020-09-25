@@ -9,6 +9,7 @@ module.exports = {
 
 function create(req,res) {
     req.body.addedBy = req.user._id
+    req.body.myTrip = req.params.id
     req.body.toDo = req.body.toDo.split(',');
     PostArrival.create(req.body)
     .then(postArrival => {res.json(postArrival)})
