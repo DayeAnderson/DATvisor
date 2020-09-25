@@ -38,12 +38,12 @@ class App extends Component {
     this.setState({ user: authService.getUser() });
   };
 
-  handleAddPre = async newPreData => {
-    const newPreArrival = await PreArrivalAPI.create(newPreData);
+  handleAddPre = async (newPreData, myTripId) => {
+    const newPreArrival = await PreArrivalAPI.create(newPreData, myTripId);
     newPreArrival.addedBy = {name: this.state.user.name, _id: this.state.user._id}
     this.setState(state => ({
       preArrivals: [...state.preArrivals, newPreArrival]
-    }), () => this.props.history.push('/itinerary')) 
+    }), () => this.props.history.push('/itinerary', { myTrip: {_id: myTripId}})) 
   }
 
   handleAddTrip = async newTripData => {
@@ -54,11 +54,11 @@ class App extends Component {
     }), () => this.props.history.push('/my-trips')) 
   }
 
-  handleAddPost = async newPostData => {
-    const newPost = await PostArrivalAPI.create(newPostData);
+  handleAddPost = async (newPostData, myTripId) => {
+    const newPost = await PostArrivalAPI.create(newPostData, myTripId);
     this.setState(state => ({
       postArrivals: [...state.postArrivals, newPost]
-    }), () => this.props.history.push('/itinerary')) 
+    }), () => this.props.history.push('/itinerary', { myTrip: {_id: myTripId}})) 
   }
 
   handleUpdateMyTrip = async updatedTripData => {
@@ -72,23 +72,22 @@ class App extends Component {
         );
       }
   
-  handleUpdatePreArrival = async updatedPreData => {
+  handleUpdatePreArrival = async (updatedPreData, myTripId) => {
     const updatedPreArrival = await PreArrivalAPI.update(updatedPreData);
     const newPreArrivalsArray = this.state.preArrivals.map(pre => 
       pre._id === updatedPreArrival._id ? updatedPreArrival : pre
       );
       this.setState(
         {preArrivals: newPreArrivalsArray},
-        () => this.props.history.push('/itinerary')
-        );
+        () => this.props.history.push('/itinerary', { myTrip: {_id: myTripId}}));
       }
 
-  handleDeletePreArrival = async id => {
+  handleDeletePreArrival = async (id, myTripId) => {
     if(authService.getUser()){
       await PreArrivalAPI.deleteOne(id);
       this.setState(state => ({
         preArrivals: state.preArrivals.filter(pre => pre._id !== id)
-      }), () => this.props.history.push('/itinerary'));
+      }), () => this.props.history.push('/itinerary', { myTrip: {_id: myTripId}}))
     } else {
       this.props.history.push('/login')
     }
@@ -105,23 +104,22 @@ class App extends Component {
     }
   }
 
-  handleUpdateToDo = async updatedPostData => {
+  handleUpdateToDo = async (updatedPostData, myTripId) => {
     const updatedPost = await PostArrivalAPI.update(updatedPostData);
     const newPostArray = this.state.postArrivals.map(t =>
       t._id === updatedPost._id ? updatedPost : t
     );
     this.setState(
       { postArrivals: newPostArray },
-      () => this.props.history.push('/itinerary')
-    );
+      () => this.props.history.push('/itinerary', { myTrip: {_id: myTripId}}));
   }
 
-  handleDeletePostArrival = async id => {
+  handleDeletePostArrival = async (id, myTripId) => {
     if(authService.getUser()) {
       await PostArrivalAPI.deleteOne(id);
       this.setState(state => ({
         postArrivals: state.postArrivals.filter(a => a._id !== id)
-      }), () => this.props.history.push('/itinerary'))
+      }), () => this.props.history.push('/itinerary', { myTrip: {_id: myTripId}}))
     } else {
       this.props.history.push('/login')
     }
@@ -196,10 +194,11 @@ class App extends Component {
         <Route
           exact
           path="/addPreArrival"
-          render={() =>
+          render={({location}) =>
             authService.getUser() ?
               <AddPre
                 handleAddPre={this.handleAddPre}
+                location={location}
                 />
                 :
                 <Redirect to='/' />
@@ -208,10 +207,11 @@ class App extends Component {
         <Route
             exact
             path="/postToDo"
-            render={() =>
+            render={({location}) =>
               authService.getUser() ?
               <AddPostList
               handleAddPost={this.handleAddPost}
+              location={location}
               />
               :
               <Redirect to="/" />
@@ -240,7 +240,7 @@ class App extends Component {
         }/>
         <Route
         exact
-        path='/itinerary' render={() =>
+        path='/itinerary' render={({location, history}) =>
       authService.getUser() ?
         <ItineraryPage
           preArrivals={this.state.preArrivals}
@@ -248,6 +248,8 @@ class App extends Component {
           user={this.state.user}
           handleDeletePreArrival={this.handleDeletePreArrival}
           handleDeletePostArrival={this.handleDeletePostArrival}
+          location={location}
+          history={history}
           />
           :
           <Redirect to='/' />

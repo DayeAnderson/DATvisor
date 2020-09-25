@@ -5,6 +5,19 @@ import { Link } from 'react-router-dom';
 import PostCard from '../../components/PostCard/PostCard'
 
 const ItineraryPage = (props) => {
+    console.log(props.location)
+    console.log(props.history)
+    // const myTrip = props.location.state.myTrip._id ? props.location.state.myTrip._id : props.history.location.state.myTripId 
+    // console.log(myTrip)
+    const tripPreArrivals = props.preArrivals.filter((preArrival) => {
+        return props.location.state.myTrip._id === preArrival.myTrip 
+    })
+    const tripPostArrivals = props.postArrivals.filter((postArrival) => {
+        return props.location.state.myTrip._id === postArrival.myTrip 
+    })
+    console.log(props.history)
+
+
     return(
         <> 
         <img src="https://i.imgur.com/bcYXOOF.png" height="300px"alt=""/>
@@ -14,14 +27,16 @@ const ItineraryPage = (props) => {
             <div className="card-body">
 
         <h1>Pre-Arrival Itinerary</h1>
+        
         <div className='container'>
 
-            {props.preArrivals.map((preArrival, myTrip) =>
+            {tripPreArrivals.map((preArrival) =>
                 <PreCard
-                key={myTrip._id}
+                key={preArrival._id}
                 preArrival={preArrival}
                 handleDeletePreArrival={props.handleDeletePreArrival}
                 user={props.user}
+                myTripId={props.location.state.myTrip._id}
                 />
                 )}
         </div>
@@ -29,7 +44,8 @@ const ItineraryPage = (props) => {
         to={{
             pathname: '/addPreArrival',
             state: {
-                preArrivals: []
+                preArrivals: [],
+                myTripId: props.location.state.myTrip._id
             }
         }}>
         <button type="button" className="iButt">Add Task</button>
@@ -40,12 +56,13 @@ const ItineraryPage = (props) => {
             <div className="card-body">
         <h1>Post-Arrival Itinerary</h1>
         <div>
-            {props.postArrivals.map(postArrival =>
+            {tripPostArrivals.map(postArrival =>
                 <PostCard
                 key={postArrival._id}
                 postArrival={postArrival}
                 handleDeletePostArrival={props.handleDeletePostArrival}
                 user={props.user}
+                myTripId={props.location.state.myTrip._id}
                 />
                 )} 
         </div>
@@ -53,7 +70,8 @@ const ItineraryPage = (props) => {
         to={{
             pathname: '/postToDo',
             state: {
-                postArrivals: []
+                postArrivals: [],
+                myTripId: props.location.state.myTrip._id
             }
         }}>
         <button type="button" className="iButt">Add Task</button>

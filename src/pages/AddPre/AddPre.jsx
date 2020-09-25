@@ -11,7 +11,7 @@ class AddPre extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.handleAddPre(this.state.formData)
+        this.props.handleAddPre(this.state.formData, this.props.location.state.myTripId)
     }
 
     handleChange = e => {

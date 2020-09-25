@@ -32,7 +32,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function PreCard({ user, preArrival, handleDeletePreArrival}) {
+function PreCard({ user, preArrival, handleDeletePreArrival, myTripId}) {
     return (
         <>
         {user._id ? 
@@ -46,11 +46,11 @@ function PreCard({ user, preArrival, handleDeletePreArrival}) {
                     className="btn yellow black-text"
                     to={{
                         pathname: '/edit',
-                        state: {preArrival}
+                        state: {preArrival, myTripId}
                     }}>
                     <button type="submit" className="iButt">Edit</button>
                     </Link>
-                        <button type="submit" className="iButt" onClick={() => handleDeletePreArrival(preArrival._id)}>
+                        <button type="submit" className="iButt" onClick={() => handleDeletePreArrival(preArrival._id, myTripId)}>
                             Delete 
                         </button>
             </>
