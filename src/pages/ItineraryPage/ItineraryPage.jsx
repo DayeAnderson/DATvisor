@@ -32,7 +32,7 @@ const ItineraryPage = (props) => {
                 preArrivals: []
             }
         }}>
-        <button type="button" className="iButt">Add Task</button>
+        <button type="button" className="iBoo">Add Task</button>
         </Link>
         </div>
         </div>
@@ -56,7 +56,7 @@ const ItineraryPage = (props) => {
                 postArrivals: []
             }
         }}>
-        <button type="button" className="iButt">Add Task</button>
+        <button type="button" className="iBoo">Add Task</button>
         </Link>
         </div>  
         </div>

@@ -1,3 +1,11 @@
 .itin {
     display: flex;
 }
+
+.iBoo {
+    border-radius: 10px;
+    border: none;
+    background-color: #5c755e;
+    color: white;
+
+}
