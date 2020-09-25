@@ -8,6 +8,8 @@ const ItineraryPage = (props) => {
     return(
         <> 
         <img src="https://i.imgur.com/bcYXOOF.png" height="300px"alt=""/>
+        <div className="itin">
+
         <div className="card" id="left">
             <div className="card-body">
 
@@ -57,6 +59,7 @@ const ItineraryPage = (props) => {
         <button type="button" className="iButt">Add Task</button>
         </Link>
         </div>  
+        </div>
         </div>
         </>
     )
