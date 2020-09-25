@@ -43,7 +43,7 @@ class AddPre extends Component {
                             className="PreAddBtn"
                                     >
                             Add to Itinerary
-                        </button>                           
+                        </button>                         
                     </form>
                     </div>
                     </div>

@@ -27,16 +27,16 @@ class AddPostList extends Component {
         return (
             <>
             <img src="https://i.imgur.com/bcYXOOF.png" height="300px"alt=""/>
-            <h1>Add To-Do</h1>
+            <h1>Add a Post Arrival Task</h1>
             <div className="card" id="addPost">
             <form className="col s12" ref={this.formRef} onSubmit={this.handleSubmit}>
                 <div className="row">
                     <div className="input-field col s12">
-                    <label htmlFor="toDo">What Would You Like To Do?</label><br/>
+                    <label htmlFor="toDo">Task</label>
                     <input name="toDo" id="toDo" type="text" className="active" value={this.state.formData.toDo} onChange={this.handleChange}/>
                     </div>
                 </div>
-                <br/>
+                
                 <button className="postButt" type="submit">Add To Itinerary</button>
             </form>
             
