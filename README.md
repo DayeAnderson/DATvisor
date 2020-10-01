@@ -91,3 +91,5 @@ to:
 - Shahzad Khan
 - David Stinson
 - Dwayne Bush
+
+## This application is still a work in progress and will imporve over time. The creators behind DATvisor are passionate about making all the stretch goals become a reality and further beyond.
